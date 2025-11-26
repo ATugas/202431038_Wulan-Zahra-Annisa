@@ -1,0 +1,263 @@
+/* ===========================
+   ROOT & BASE — TEMA PINK
+   =========================== */
+:root {
+  --bg-main: #fde4ec;               /* pink pastel */
+  --bg-secondary: #f7c7da;          /* pink terang */
+  --accent: #ff5f9e;                /* pink cerah */
+  --accent-soft: #ff94b8;           /* pink lembut */
+  --text-main: #5a2a41;             /* dark rose */
+  --text-muted: #7e4a5f;
+  --card-bg: #ffffffaa;             /* putih transparan lembut */
+  --border-soft: #ffbcd4;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --max-width: 1200px;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(140deg, #fde4ec, #ffe9f2, #ffddeb);
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  color: var(--text-main);
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.site-hero {
+  background: linear-gradient(120deg, #ffcce1, #ffe0eb);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 8px 20px rgba(255, 150, 190, 0.4);
+}
+
+.site-title {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.user-badge {
+  background: #ffffffcc;
+  border: 1px solid var(--border-soft);
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ===========================
+   INTRO CARD
+   =========================== */
+.card {
+  background: #fff9fb;
+  border: 1px solid var(--border-soft);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(255, 150, 190, 0.35);
+}
+
+.card-title {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* ===========================
+   TOPICS
+   =========================== */
+.section-heading {
+  color: var(--accent);
+  font-weight: 700;
+  margin: 20px 0 10px;
+}
+
+.topic-list {
+  display: grid;
+  gap: 16px;
+}
+
+.topic-card {
+  background: #fff2f7;
+  border: 2px solid #ffd2e3;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 300ms;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(255, 150, 190, 0.5);
+}
+
+.topic-head {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.num {
+  width: 42px;
+  height: 42px;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.topic-name {
+  flex: 1;
+  margin-left: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.chev {
+  font-size: 1.2rem;
+  color: var(--accent);
+  transition: 0.2s;
+}
+
+.topic-card.active .chev {
+  transform: rotate(90deg);
+}
+
+.topic-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 16px;
+  background: #fffafc;
+  transition: max-height 300ms ease, opacity 300ms ease, padding 300ms ease;
+}
+
+.topic-body.show {
+  max-height: 500px;
+  opacity: 1;
+  padding: 16px;
+  border-top: 1px solid #ffd0df;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--accent-soft);
+}
+
+.btn.ghost {
+  background: #ffffffaa;
+  color: var(--text-main);
+  border: 2px solid var(--accent-soft);
+}
+
+.btn.ghost:hover {
+  background: #ffe8f3;
+}
+
+/* ===========================
+   GALLERY PAGE
+   =========================== */
+.gallery-hero {
+  text-align: center;
+  padding: 20px;
+  background: #ffe0eb;
+  border-radius: 16px;
+  border: 1px solid #ffc9dc;
+  box-shadow: 0 8px 20px rgba(255, 150, 190, 0.3);
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+/* 1 kolom mobile */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 2 kolom tablet */
+@media (min-width: 600px) and (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3 kolom desktop */
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-item {
+  background: #fff5f9;
+  border: 2px solid #ffcadd;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255, 150, 190, 0.45);
+}
+
+.img-box {
+  height: 220px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===========================
+   MESSY MODE (jelek dan kontras buruk)
+   =========================== */
+body.messy-mode {
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+  font-family: "Comic Sans MS", cursive;
+}
+
+body.messy-mode .topic-card {
+  background: #ff00ff;
+  border: 3px dashed yellow;
+}
+
+body.messy-mode .btn {
+  background: repeating-linear-gradient(45deg, yellow, yellow 8px, cyan 8px, cyan 16px);
+  border: 3px dashed black;
+  color: black !important;
+}
